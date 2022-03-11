@@ -75,4 +75,22 @@ class CustomerRepositoryTest {
 		
 		assertEquals(1, repository.findAll().size());
 	}
+	
+	@Test
+	@Order(5)
+	@DisplayName("Test Find By First Name")
+	void testFindByFirstName() {
+		Customer foundCustomer = repository.findByFirstName("Mark");
+		
+		assertEquals(customer1, foundCustomer);
+	}
+	
+	@Test
+	@Order(6)
+	@DisplayName("Test Find By Last Name")
+	void testFindByLastName() {
+		Customer foundCustomer = repository.findByLastName("White");
+		
+		assertEquals(customer2, foundCustomer);
+	}
 }
