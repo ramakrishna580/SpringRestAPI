@@ -16,5 +16,10 @@ pipeline {
                 bat "mvn package"
             }
         }
+        stage('Maven Package') {
+            steps {
+                bat "copy %JENKINS_HOME%\jobs\%JOB_NAME%\builds\%BUILD_NUMBER\log C:\Users\Collabera\Documents\Logs\log.txt%"
+            }
+        }
     }
 }
